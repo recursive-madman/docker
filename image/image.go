@@ -64,7 +64,7 @@ func LoadImage(root string) (*Image, error) {
 		// because a layer size of 0 (zero) is valid
 		img.Size = -1
 	} else {
-		size, err := strconv.Atoi(string(buf))
+		size, err := strconv.ParseInt(string(buf), 10, 64)
 		if err != nil {
 			return nil, err
 		}
